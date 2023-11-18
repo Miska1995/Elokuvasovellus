@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+/* Tuodaan omaan käyttöön 'Press Start 2P' fontti Google Fonts -kirjastosta */
+
+/* Yleiset asetukset kaikille elementeille */
+*, *::before, *::after {
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* Sivun perustyylit */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fffdfd;
+    line-height: 1.6;
+}
+
+/* Päälaatikon tyyli */
+.container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 20px;
+    background: #1e1e1e;
+    box-shadow: 0 12px 24px rgba(74, 216, 244, 0.9);
+    animation: sparkle 1.5s infinite ease-in-out;
+}
+
+/* Otsikon tyyli ja animaatio */
+h1 {
+    text-align: center;
+    color: #FFD700;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    animation: flicker 1s linear infinite;
+    text-shadow: 3px 3px 0px #c148f5, 0 0 10px #FFD700, 0 0 20px #FFD700;
+}
+
+/* Retrotyylinen taustakuvan vaihto nappi */
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: #FFD700;
+    background-color: #343434;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 0;
+    margin: 10px;
+}
+
+/* Taustakuva vaihto napin hover-efekti */
+button:hover {
+    background-color: #FFD700;
+    color: #1e1e1e;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
+}
+
+/* Musiikin toisto -napin tyyli */
+#music-toggle-button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: #FFD700;
+    background-color: #343434;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+/* Musiikki-napin hover efekti */
+#music-toggle-button:hover {
+    background-color: #FFD700;
+    color: #1e1e1e;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
+}
+
+/* Syöttökenttien tyyli */
+#theater-dropdown, #search-input {
+    width: calc(100%);
+    padding: 15px;
+    border: 1px solid #343434;
+    background-color: #262626;
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(90deg, #000000 50%, #343434 50%);
+    background-size: 200% 100%;
+}
+
+/* Syöttökenttien hover-tyyli */
+#theater-dropdown:hover, #search-input:hover {
+    border-color: #FFD700;
+    background-position: -100% 0;
+}
+
+/* Elokuvakontin tyyli */
+#movies-container {
+    margin-top: 30px;
+}
+
+/* Elokuvakorttien tyyli */
+.movie {
+    background-color: #1e1e1e;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 3px solid #343434;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+}
+
+/* Elokuvakorttien hover-efekti */
+.movie:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 251);
+    transform: translateY(-5px);
+}
+
+/* Elokuvakuvien ja tekstien tyyli */
+.movie img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    object-fit: cover;
+}
+
+.movie h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: #FFD700;
+    text-shadow: 0 0 5px #FFD700;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.movie p {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Press Start 2P', cursive;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+/* Juonikortin tyyli ja avattuna olevan juonikortin animaatio */
+.movie details[open] {
+    animation: yellowPulse 2s ease-in-out infinite;
+    background-color: #2c2c2c;
+}
+
+.movie details {
+    max-width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #343434;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 0 10px #000000;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Hover efektin asetukset */
+.movie details summary:hover {
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+/* Juonikortin yhteenveto ja tekstin tyyli */
+.movie details summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: .5em;
+    margin: -5px -5px 10px;
+    background-color: #343434;
+}
+
+/* Juonen fontti asetukset */
+.movie details p {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+    background-color: #000000;
+    padding: 15px;
+    margin: 0;
+    font-size: 0.7rem;
+    cursor: pointer;
+    outline: none;
+    max-height: 200px;
+    overflow-y: auto;
+    color: #ddd;
+}
+
+/* Toivelista näppäin kun olet lisänyt elokuvan toivelistalle */
+.added-to-wishlist {
+    background-color: #39FF14;
+    color: white;
+    border: none;
+}
+
+/* Äänenvoimakkuuden säätimen konteinerin tyyli */
+.volume-container {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    background-color: #343434;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Tyylit itse sliderille, mukailtu toisto-napin tyyleistä */
+#volume-slider {
+    width: 183px;
+    height: 15px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    -webkit-appearance: none; /* VScoden asetuksien takia syntynyt varoitus, tämä ei tarvitse huomioida. */
+    outline: none;
+    box-shadow: inset 0 0 5px rgba(255, 215, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+/* Sliderin pallo (thumb) asetukset, mukailtu toisto-napin tyyleistä */
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #343434;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #FFD700;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+}
+
+#volume-slider:hover {
+    background-color: #FFD700;
+}
+
+/* Sliderin pallo asetukset Mozilla-pohjaisille selaimille */
+#volume-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #343434;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #FFD700;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+}
+
+
+/* Kellon asetukset */
+#live-clock {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-family: 'Press Start 2P', cursive;
+    color: #FFD700;
+}
+
+/* Logon tyyli */
+#app-logo {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    display: block;
+    margin: 30px auto 10px;
+}
+
+/* Teatterivalikon tyyli */
+#theater-dropdown {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* Päälaatikon sparkle-efekti */
+@keyframes sparkle {
+    0% {
+        box-shadow: 0 12px 24px rgba(74, 216, 244, 0.9);
+    }
+    50% {
+        box-shadow: 0 12px 30px rgba(74, 216, 244, 1), 0 0 12px rgba(74, 216, 244, 0.7);
+    }
+    100% {
+        box-shadow: 0 12px 24px rgba(74, 216, 244, 0.9);
+    }
+}
+/* Otsikko tekstin animaatioita */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 3px 3px 0px #c148f5;
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+        opacity: 0;
+    }
+}
+/* Avatun juoni-laatikon animaatio ja väri */
+@keyframes yellowPulse {
+    0%, 100% { box-shadow: 0 6px 12px #FFD700; }
+    50% { box-shadow: 0 12px 24px #FFD700; }
+}
+
+/* Responsiiviset tyylit pienille näytöille */
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    button, #music-toggle-button, #theater-dropdown, #search-input {
+        font-size: 0.6rem;
+        padding: 8px 15px;
+    }
+    .movie {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .movie img {
+        margin-bottom: 10px;
+    }
+    .movie h3 {
+        font-size: 1rem;
+    }
+    .movie p, .movie details p {
+        font-size: 0.6rem;
+    }
+}
