@@ -94,7 +94,7 @@ function fetchMovies(theaterId) {
     const today = new Date();
 
     // Muotoillaan päivämäärä Finnkinon API:n vaatimukseen sopivaksi
-    // Poistetaan aikaosa ja muotoillaan se oikeaan muotoon (vvvv-kk-pp)
+    // Aikaosa muotoiltu (vvvv-kk-pp)
     const formattedDate = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}`;
 
     // Rakennetaan URL-osoite nykyiselle päivämäärälle
