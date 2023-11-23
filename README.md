@@ -34,6 +34,8 @@ VScode valitaa CSS-tiedostossa tätä asetusta: -webkit-appearance: none; (syyt�
 
 Olen myös huomannut, että Microsoft edgessä, konsoliin esiintyy muutamia eri "Issues" kun taas goolge chromessa on niitä 0...
 
+Responsiivisuus: Nappulat eivät näytä hyvältä puhelimien näytöissä.
+
 Muuta:
 
 Tätä työtä olisi kiva jatkaa esim: Full-Stack kurssilla!
