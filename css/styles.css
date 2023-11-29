@@ -323,19 +323,20 @@ button:hover {
     50% { box-shadow: 0 12px 24px #FFD700; }
 }
 
-/* Responsiiviset tyylit pienille näytöille */
+/* Responsiiviset tyylit pienille näytöille Bootstrapin avulla */
 @media screen and (max-width: 600px) {
     .container {
-        max-width: 100%;
-        margin: 10px auto;
+        max-width: 70%;
+        top: 25%;
+        margin: 20px auto;
         padding: 10px;
     }
     h1 {
-        font-size: 2.5rem;
+        font-size: 1rem;
     }
-    button, #music-toggle-button, #theater-dropdown, #search-input {
-        font-size: 0.6rem;
-        padding: 8px 15px;
+    .btn, .form-control {
+        font-size: 0.5rem;
+        padding: 4px 8px;
     }
     .movie {
         padding: 10px;
@@ -349,5 +350,17 @@ button:hover {
     }
     .movie p, .movie details p {
         font-size: 0.6rem;
+    }
+
+    /* Responsiiviset tyylit musiikkinapille */
+    #music-toggle-button {
+        font-size: 0.5rem;
+        padding: 4px 8px;
+    }
+
+    /* Responsiiviset tyylit taustakuvan vaihtopainikkeelle */
+    .btn-primary {
+        font-size: 0.5rem;
+        padding: 4px 8px;
     }
 }
